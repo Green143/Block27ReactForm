@@ -1,22 +1,20 @@
-import { useState } from 'react'
+import SignUpForm from './Components/SignUpForm'
+import Authenticate from './Components/Authenticate'
+import { useState } from 'react';
 
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+ 
 
   return (
-      <div>
-       <form>
-        
-      <h1></h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </form>
-      </div>
-  )
+      <>
+        <Authenticate/>
+          <h1></h1>
+      
+        <SignUpForm/>
+      </>
+  );
 }
 
-export default App
+
