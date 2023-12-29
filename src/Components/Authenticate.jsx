@@ -2,13 +2,12 @@
 import { useState } from "react"
 
 
-export default function Authenticate({token, setToken}) {
+export default function Authenticate({token}) {
 
-    const [accessMessage,setAccessMessage] = useState(null);
+    const [accessMessage, setAccessMessage] = useState(null)
 
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(null)
 
-    const [result, setResult] = useState(null)
 
     async function handleClick(){
         try {
@@ -22,7 +21,7 @@ export default function Authenticate({token, setToken}) {
 
             })
                 const results = await response.json();
-                console.log(results)
+                //console.log(results)
                 setAccessMessage(results.message)
 
         } catch (error){

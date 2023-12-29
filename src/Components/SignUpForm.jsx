@@ -1,13 +1,13 @@
 
 import { useState } from "react"
 
-export default function SignUpForm({token, setToken}) {
+export default function SignUpForm({setToken}) {
 
-    const {username, setUsername}= useState ("")
+    const [username, setUsername]= useState("")
     
-    const {password, setPassword}= useState ("")
+    const [password, setPassword]= useState("")
 
-    const {error, setError} = useState (null)
+    const [error, setError] = useState(null)
 
 async function handleSubmit(event) {
         event.preventDefault()
@@ -25,8 +25,9 @@ async function handleSubmit(event) {
                 })
             })
             const result= await response.json()
+            console.log(result)
             setToken(result.token)
-            //console.log(result)
+            console.log(result)
         } catch (error) {
             setError(error.message)
         }
@@ -34,6 +35,7 @@ async function handleSubmit(event) {
     return (
         <div> 
             <h2>Sign Up!</h2>
+            {error && <p>{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <label>
                        Username:
