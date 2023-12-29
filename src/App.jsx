@@ -4,17 +4,17 @@ import { useState } from 'react';
 
 import './App.css'
 
-export default function App() {
- 
+function App() {
+  const [token, setToken] = useState(null)
 
   return (
       <>
-        <Authenticate/>
+        <Authenticate token ={token} setToken={setToken}/>
           <h1></h1>
       
-        <SignUpForm/>
+        <SignUpForm token ={token} setToken={setToken}/>
       </>
   );
 }
-
+export default App
 
